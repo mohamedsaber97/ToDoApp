@@ -2,13 +2,9 @@ package base;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,17 +15,13 @@ import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     DesiredCapabilities desiredCapabilities;
-    static AndroidDriver<MobileElement> androidDriver;
+    public static AndroidDriver<MobileElement> androidDriver;
     FileInputStream fileInputStream;
     Properties prop;
 
-    public TestBase() {
-        PageFactory.initElements(new AppiumFieldDecorator(androidDriver), this);
-    }
-
     @Parameters({"deviceName", "platformName", "platformVersion"})
-    @BeforeClass
-    public void beforeClass(String deviceName, String platformName, String platformVersion) throws IOException {
+    @BeforeTest(groups = "auth")
+    public void beforeTest(String deviceName, String platformName, String platformVersion) throws IOException {
         File configFile = new File("src/main/resources/config/config.properties");
         fileInputStream = new FileInputStream(configFile);
         prop = new Properties();
@@ -55,12 +47,12 @@ public class TestBase {
             androidDriver = new AndroidDriver<>(new URL(prop.getProperty("appiumServerUrl")), desiredCapabilities);
         }
         androidDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        System.out.println("-----beforeClass is finished-----");
+        System.out.println("-----beforeTest is finished-----");
     }
 
-    @AfterClass
-    public void afterClass() {
+    @AfterTest
+    public void afterTest() {
         // androidDriver.quit();
-        System.out.println("-----afterClass is finished-----");
+        System.out.println("-----afterTest is finished-----");
     }
 }

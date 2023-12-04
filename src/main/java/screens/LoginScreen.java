@@ -1,16 +1,15 @@
 package screens;
 
 import base.TestBase;
-import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileElement;
+import org.openqa.selenium.By;
 
 public class LoginScreen extends TestBase {
+    private final By registerBtn = MobileBy.xpath("//android.widget.TextView[@text='Signup']");
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"Signup\"]")
-    private AndroidElement registerBtn;
-
-    public RegisterScreen openSignUp() {
-        registerBtn.click();
-        return new RegisterScreen();
+    public void openSignUp() {
+        MobileElement registerBtnElement = androidDriver.findElement(registerBtn);
+        registerBtnElement.click();
     }
 }

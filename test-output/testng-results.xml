@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-12-04T15:16:00 EET" name="ToDo App" finished-at="2023-12-04T15:16:13 EET" duration-ms="12899">
+    <groups>
+      <group name="auth">
+        <method signature="LoginTest.openSignUpTC()[pri:0, instance:testcases.LoginTest@41e1e210]" name="openSignUpTC" class="testcases.LoginTest"/>
+        <method signature="RegisterTest.registerAccountTC()[pri:0, instance:testcases.RegisterTest@625732]" name="registerAccountTC" class="testcases.RegisterTest"/>
+      </group> <!-- auth -->
+    </groups>
+    <test started-at="2023-12-04T15:16:00 EET" name="android" finished-at="2023-12-04T15:16:13 EET" duration-ms="12899">
+      <class name="testcases.RegisterTest">
+        <test-method signature="registerAccountTC()[pri:0, instance:testcases.RegisterTest@625732]" started-at="2023-12-04T15:16:09 EET" name="registerAccountTC" finished-at="2023-12-04T15:16:13 EET" duration-ms="3892" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerAccountTC -->
+      </class> <!-- testcases.RegisterTest -->
+      <class name="testcases.LoginTest">
+        <test-method is-config="true" signature="beforeTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.LoginTest@41e1e210]" started-at="2023-12-04T15:16:00 EET" name="beforeTest" finished-at="2023-12-04T15:16:08 EET" duration-ms="7822" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[moSaber]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[android]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="openSignUpTC()[pri:0, instance:testcases.LoginTest@41e1e210]" started-at="2023-12-04T15:16:08 EET" name="openSignUpTC" finished-at="2023-12-04T15:16:09 EET" duration-ms="1149" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openSignUpTC -->
+      </class> <!-- testcases.LoginTest -->
+    </test> <!-- android -->
+  </suite> <!-- ToDo App -->
+</testng-results>

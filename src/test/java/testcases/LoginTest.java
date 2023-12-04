@@ -1,24 +1,16 @@
 package testcases;
 
 import base.TestBase;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import screens.LoginScreen;
-import screens.RegisterScreen;
 
 public class LoginTest extends TestBase {
 
-    LoginScreen loginScreen;
-    RegisterScreen registerScreen;
+    LoginScreen loginScreen = new LoginScreen();
 
-    @BeforeMethod
-    public void beforeMethod(){
-        loginScreen = new LoginScreen();
-    }
-
-    @Test
+    @Test (groups = "auth")
     public void openSignUpTC() {
-        registerScreen = loginScreen.openSignUp();
+        loginScreen.openSignUp();
         System.out.println("-----register screen is opened-----");
     }
 }

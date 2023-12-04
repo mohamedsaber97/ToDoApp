@@ -5,6 +5,11 @@
     <parameter name="platformName" value="android"/>
     <parameter name="platformVersion" value="12"/>
     <test name="android">
+        <groups>
+            <run>
+                <include name="auth"/>
+            </run>
+        </groups>
         <classes>
             <class name="testcases.LoginTest"/>
             <class name="testcases.RegisterTest"/>
